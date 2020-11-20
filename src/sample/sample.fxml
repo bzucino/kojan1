@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.StackedAreaChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<fx:root fx:id="mainController" prefHeight="654.0" prefWidth="641.0" type="VBox" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <AnchorPane maxHeight="-1.0" maxWidth="-1.0" VBox.vgrow="ALWAYS">
+            <children>
+                <Label alignment="CENTER" layoutX="155.0" layoutY="177.0" style="&#10;" text="Drag components from Library here…" textAlignment="CENTER" textFill="#9f9f9f" wrapText="false">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+                <VBox layoutX="568.0" layoutY="4.0" prefHeight="200.0" prefWidth="65.0">
+                    <children>
+                        <Button fx:id="loadButton" mnemonicParsing="false" text="Load" />
+                        <Button mnemonicParsing="false" text="Process" />
+                        <Button disable="true" mnemonicParsing="false" text="Merge" />
+                        <Button disable="true" mnemonicParsing="false" prefHeight="25.0" prefWidth="48.0" text="Fix It" />
+                    </children>
+                </VBox>
+                <SplitPane dividerPositions="0.27230046948356806" layoutY="4.0" orientation="VERTICAL" prefHeight="616.0" prefWidth="570.0">
+                    <items>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="119.0" prefWidth="557.0">
+                            <children>
+                                <ListView fx:id="listView" layoutX="14.0" prefHeight="171.0" prefWidth="568.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="-14.0" AnchorPane.topAnchor="0.0" />
+                            </children>
+                        </AnchorPane>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="514.0" prefWidth="568.0">
+                            <children>
+                                <StackedAreaChart fx:id="graph" layoutX="-6.0" layoutY="-55.0" prefHeight="428.0" prefWidth="568.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <xAxis>
+                                        <NumberAxis side="BOTTOM" />
+                                    </xAxis>
+                                    <yAxis>
+                                        <NumberAxis side="LEFT" />
+                                    </yAxis>
+                                </StackedAreaChart>
+                            </children>
+                        </AnchorPane>
+                    </items>
+                </SplitPane>
+            </children>
+        </AnchorPane>
+        <Label fx:id="labelMaxValue" prefHeight="17.0" prefWidth="252.0" text="MaxValue" />
+        <Label fx:id="labelMinValue" prefHeight="17.0" prefWidth="252.0" text="MaxTime" />
+    </children>
+</fx:root>
